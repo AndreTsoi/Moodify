@@ -4,7 +4,7 @@ A React application that analyzes Spotify playlist audio features and generates 
 
 ## How it works
 
-Moodify fetches audio feature data from the Spotify API — energy, valence, danceability, acousticness, tempo — and runs them through a color-mapping algorithm that converts those multidimensional values into smooth gradient transitions. The gradient and mood label update in real time as tracks are toggled.
+Moodify fetches audio feature data from the Spotify API - energy, valence, danceability, acousticness, tempo - and runs them through a color-mapping algorithm that converts those multidimensional values into smooth gradient transitions. The gradient and mood label update in real time as tracks are toggled.
 
 ## Features
 
