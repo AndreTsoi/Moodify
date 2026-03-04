@@ -1,16 +1,35 @@
-# React + Vite
+# Moodify
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React application that analyzes Spotify playlist audio features and generates animated mood visualizations.
 
-Currently, two official plugins are available:
+## How it works
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Moodify fetches audio feature data from the Spotify API — energy, valence, danceability, acousticness, tempo — and runs them through a color-mapping algorithm that converts those multidimensional values into smooth gradient transitions. The gradient and mood label update in real time as tracks are toggled.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Spotify OAuth authentication and playlist loading
+- Real-time audio feature analysis across selected tracks
+- Color-mapping algorithm: valence → hue, energy → saturation, danceability → gradient spread
+- Animated gradient visualization that reflects playlist mood
+- Mood classification (Euphoric, Serene, Tense, Melancholic, Pensive)
 
-## Expanding the ESLint configuration
+## Tech
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React + Vite
+- Spotify Web API (audio features, playlists)
+- PKCE OAuth flow
+
+## Setup
+
+```bash
+npm install
+npm run dev
+```
+
+Add your Spotify Client ID to a `.env` file:
+
+```
+VITE_SPOTIFY_CLIENT_ID=your_client_id_here
+```
+
